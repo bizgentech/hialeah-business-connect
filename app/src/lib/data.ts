@@ -59,7 +59,12 @@ export const BUSINESSES: Business[] = [
     isVerified: true,
     // Stitch scene: merchandise display
     image: "/assets/scenes/offers-merchandise.jpg",
-    galleryImages: [],
+    // Gallery: boutique retail interior, shopping mall interior, warm café atmosphere
+    galleryImages: [
+      "/assets/scenes/homepage-boutique.jpg",
+      "/assets/scenes/kiosk-interior.jpg",
+      "/assets/scenes/offers-coffee.jpg",
+    ],
   },
   {
     id: "5",
@@ -74,7 +79,12 @@ export const BUSINESSES: Business[] = [
     isVerified: true,
     // Stitch scene: modern clinic
     image: "/assets/scenes/homepage-clinic.jpg",
-    galleryImages: [],
+    // Gallery: clinic interior, professional office, location map
+    galleryImages: [
+      "/assets/scenes/homepage-clinic.jpg",
+      "/assets/scenes/directory-office.jpg",
+      "/assets/scenes/profile-map.jpg",
+    ],
   },
   {
     id: "6",
