@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offers - Hialeah Business Connect</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#d6e3ff",
+                    "outline-variant": "#c4c6cf",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-tertiary-container": "#bf7a00",
+                    "on-primary-fixed": "#001b3d",
+                    "primary": "#000a1e",
+                    "secondary-container": "#659dfe",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-surface": "#191c1e",
+                    "surface-dim": "#d8dadc",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#331d00",
+                    "on-secondary-fixed": "#001a40",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-secondary-fixed-variant": "#004491",
+                    "surface-tint": "#465f88",
+                    "surface": "#f7f9fb",
+                    "inverse-primary": "#aec7f6",
+                    "on-surface-variant": "#44474e",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary": "#ffffff",
+                    "outline": "#74777f",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#708ab5",
+                    "primary-fixed-dim": "#aec7f6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#003370",
+                    "on-error-container": "#93000a",
+                    "secondary": "#115cb9",
+                    "tertiary": "#140800",
+                    "secondary-fixed-dim": "#acc7ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-variant": "#e0e3e5",
+                    "primary-container": "#002147",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "background": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "secondary-fixed": "#d7e2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "stack-md": "24px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Outfit"],
+                    "label-md": ["Inter"],
+                    "display-lg-mobile": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "display-lg": ["Outfit"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface sticky top-0 z-50 border-b border-outline-variant shadow-sm w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand Logo -->
+<div class="text-headline-md font-headline-md font-bold text-secondary flex items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_city</span>
+                Hialeah Business Connect
+            </div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-6 h-full">
+<a class="text-on-surface-variant hover:text-secondary text-label-md font-label-md h-full flex items-center hover:bg-surface-container-low transition-colors px-3" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary text-label-md font-label-md h-full flex items-center hover:bg-surface-container-low transition-colors px-3" href="#">Businesses</a>
+<a class="text-secondary border-b-2 border-secondary pb-1 text-label-md font-label-md h-full flex items-center opacity-80 duration-150 px-3 pt-1" href="#">Offers</a>
+<a class="text-on-surface-variant hover:text-secondary text-label-md font-label-md h-full flex items-center hover:bg-surface-container-low transition-colors px-3" href="#">Kiosks</a>
+<a class="text-on-surface-variant hover:text-secondary text-label-md font-label-md h-full flex items-center hover:bg-surface-container-low transition-colors px-3" href="#">Add Your Business</a>
+<a class="text-on-surface-variant hover:text-secondary text-label-md font-label-md h-full flex items-center hover:bg-surface-container-low transition-colors px-3" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<button class="bg-[#f59e0b] hover:bg-opacity-90 text-on-primary text-label-md font-label-md px-4 py-2 rounded-lg font-bold transition-all shadow-sm">
+                    Add Your Business Free
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<!-- Header Section -->
+<header class="mb-stack-lg text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-stack-sm">
+<div class="max-w-2xl">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-primary-container mb-2">Local Offers Across Hialeah</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Discover promotions, discounts, and exclusive deals from your favorite local businesses.</p>
+</div>
+</header>
+<!-- Featured Banner (Asymmetric Layout) -->
+<section class="mb-stack-lg">
+<div class="rounded-xl overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,33,71,0.05),0_2px_4px_-1px_rgba(0,33,71,0.03)] border border-outline-variant bg-surface-container-lowest grid grid-cols-1 md:grid-cols-12 relative group cursor-pointer transition-all hover:border-secondary">
+<!-- Image side -->
+<div class="md:col-span-7 h-64 md:h-96 bg-surface-dim relative overflow-hidden">
+<img alt="Featured Offer Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A bright, modern interior of a high-end local bakery or cafe in Hialeah. The lighting is warm and inviting, highlighting a display case filled with fresh, artisanal pastries. The aesthetic is clean, civic-tech modern, blending a welcoming community feel with premium business quality. Soft daylight streams through large windows, creating a trustworthy and engaging atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTTP1hIuSBsV_6SchEIJIzj3LFQaqT5LNS-1Su2NDq17dk7l9awpl0Ld00WX3t9c_5Y8d8OAe9IBdiNo-qTD6h2NAWVhVteLffxr02ypV6qPsT1B2WiE1C0BgLo1_hWJPJ_WiCxg_g1PJs30eee5f772ty88jqKR0s3piTvzw1wg-Ty-0GAUkIzw8tvOEUKd3XCpv45NnAbnHruOdlo4cjTGEYu4RojSFRLgCWRIVdxZwc5ujl5fL_W1UPrQiAEyjOQiashZDlG1Tp"/>
+<div class="absolute top-4 left-4 bg-[#f59e0b] text-on-primary text-label-sm font-label-sm px-3 py-1 rounded-full uppercase tracking-wider font-bold shadow-sm">
+                        Featured Sponsor
+                    </div>
+</div>
+<!-- Content side -->
+<div class="md:col-span-5 p-stack-md md:p-stack-lg flex flex-col justify-center bg-primary-container text-on-primary relative">
+<!-- Deco element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary-container font-bold text-headline-md overflow-hidden">
+<img alt="Logo" class="w-full h-full object-cover" data-alt="A minimalist logo mark for a modern local restaurant, featuring a clean geometric fork and knife icon on a solid, light background. The style is professional and crisp, adhering to the high-contrast, modern corporate identity of a trustworthy civic directory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1yFRFbS7lczo8wnHddqO0sekBx6X7WzhSuPteuYy1GKIYz7qWSVTgYMENnGTcG2HJsVoXyjwt4wExj5DSQiD6wjuV1iqrIIh2Ga8VswQKnZawcuJRNIQSZ2aVmHLET-bJUOHdwaWYsxGIg6TnsoaRMSnjRu4S-mc1zexqAhlKZJCtYLsImLK5un5s3dX3ksG4TGFfQY-nM9CdcDkyMXEAfmRkRuBbpk1tE8orNinRrnuv3X75BE7Q-4EiwjtGSlteIVjD2xz6T8uf"/>
+</div>
+<span class="text-label-md font-label-md text-primary-fixed-dim">El Rincon Cubano</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg mb-2">Weekend Family Fiesta Special</h2>
+<p class="text-body-md font-body-md text-primary-fixed mb-stack-md opacity-90">Get 25% off our signature family platters every Saturday and Sunday. Experience the authentic taste of our community with your loved ones.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center text-label-sm font-label-sm text-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px] mr-1">timer</span>
+                            Expires in 3 days
+                        </div>
+<button class="bg-[#f59e0b] hover:bg-opacity-90 text-on-primary text-label-md font-label-md px-6 py-2.5 rounded-lg font-bold transition-all flex items-center gap-2">
+                            Claim Offer
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="mb-stack-md flex flex-wrap items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center text-on-surface-variant font-label-md text-label-md mr-2">
+<span class="material-symbols-outlined mr-2">filter_list</span> Filters:
+            </div>
+<select class="bg-surface border border-outline-variant text-on-surface text-label-md font-label-md rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary px-4 py-2 appearance-none cursor-pointer">
+<option value="">All Categories</option>
+<option value="dining">Dining &amp; Food</option>
+<option value="retail">Retail</option>
+<option value="services">Professional Services</option>
+</select>
+<select class="bg-surface border border-outline-variant text-on-surface text-label-md font-label-md rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary px-4 py-2 appearance-none cursor-pointer">
+<option value="">Any Area</option>
+<option value="west">West Hialeah</option>
+<option value="east">East Hialeah</option>
+<option value="downtown">Downtown</option>
+</select>
+<div class="flex bg-surface-container-low rounded-lg p-1 ml-auto">
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md bg-surface text-on-surface shadow-sm">Newest</button>
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md text-on-surface-variant hover:text-on-surface">Expiring Soon</button>
+</div>
+</section>
+<!-- Offer Cards Grid (Bento Style Layout) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_-1px_rgba(0,33,71,0.05),0_2px_4px_-1px_rgba(0,33,71,0.03)] hover:border-secondary hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group">
+<div class="h-40 relative overflow-hidden bg-surface-dim">
+<img alt="Offer Image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A clean, brightly lit modern office space belonging to a local professional service business in Hialeah. The scene shows a sleek desk with a laptop and a small green plant, conveying trust, professionalism, and modern corporate aesthetics. The colors are muted whites and grays with subtle warm accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCosBHyPsf3ogDwIOA6m6uLumKGEwrmcOmAtKBPrGWcxxE1T4rQB45fVdjIRfYGO9dKxXCsjbGJKK1-OlArRDAYYRZNv_PBW1CyDD_MOxaCD7SirHYPk7WMg9w-tK3Shbh5YoMJMdQi5DZVgZZluvRLdE-3UwMOglWWz7S5474-9BBGa2-olHzmWwT3JkXhknc_HNJ4IQF_mvG-HULjj_bOAr74f2Ivju4fNb_CNTEkHcXfpmE1gZLZranThP00MHtGUyqUg-mfHMu-"/>
+<div class="absolute top-3 left-3 bg-secondary text-on-primary text-label-sm font-label-sm px-2 py-1 rounded font-bold shadow-sm">
+                        Services
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant mb-1">Miami Tech Solutions</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-tight">Free IT Consultation</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex-shrink-0 overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">computer</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-4">Book a 1-hour free assessment of your small business network infrastructure. No commitment required.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> Valid till Oct 31
+                        </span>
+<button class="text-primary-container hover:text-secondary font-label-md text-label-md flex items-center gap-1 transition-colors">
+                            View Offer <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_-1px_rgba(0,33,71,0.05),0_2px_4px_-1px_rgba(0,33,71,0.03)] hover:border-secondary hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group">
+<div class="h-40 relative overflow-hidden bg-surface-dim">
+<img alt="Offer Image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A well-organized, vibrant display of merchandise in a local retail boutique. Soft, natural lighting highlights the high-quality textures of the products. The setting feels welcoming, community-oriented, and premium, perfectly matching the modern civic-tech identity of a trusted local directory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgEYbLzQMJqTYQ0IZUYA1M1gqEXdyFAOYQITU-NcpQwowQZFk0BRN_bMgiEJq_0FjMF-YhmnQ-9M0-LwBHU_NIinx_yY5Wm0G9YsfWFdbqcWItGgVy4d0kqTinIiKhloZGute9ae_qI7KlvOUbtJANvuFxOlDn2IxKdcMnTWsqONzczpc2_EDHIt5FWir0D4kiVZgC_sxLmscA2p7rqJvqIQGe8YGR04utzYndIk1fH_YDy6UrarjJtRmQBUGa3gXNKsNbO9_CqKlU"/>
+<div class="absolute top-3 left-3 bg-secondary text-on-primary text-label-sm font-label-sm px-2 py-1 rounded font-bold shadow-sm">
+                        Retail
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant mb-1">Bella Boutique</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-tight">Buy 1 Get 1 50% Off</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex-shrink-0 overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">local_mall</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-4">Update your autumn wardrobe! Mix and match any items in store. Second item of equal or lesser value is half price.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-[#93000a] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px]">warning</span> Expires Today
+                        </span>
+<button class="text-primary-container hover:text-secondary font-label-md text-label-md flex items-center gap-1 transition-colors">
+                            View Offer <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_6px_-1px_rgba(0,33,71,0.05),0_2px_4px_-1px_rgba(0,33,71,0.03)] hover:border-secondary hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group">
+<div class="h-40 relative overflow-hidden bg-surface-dim">
+<img alt="Offer Image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A close-up shot of a freshly brewed artisanal coffee beside a warm pastry on a rustic wooden table. The lighting is moody but clear, emphasizing the rich textures and colors of the food. The atmosphere suggests a cozy, high-quality local café participating in a modern community business network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArF3q-oLKx2tw8GRJ32lFces5TuhIMWfw3Zbvek3KfO4dyrwtEZeSORicJyQigZiCEW1IpfP9cBSh_urgyJV8AoNfKabi0EOzS9Qb_A4VUykxMl5NQ8LY7rSCUHKxzlOxU2XwYMN8Kkx9Qlyz2dMpL_U8sSgK6Gs99FD4hEDq5qPoB19qS6XW9ldfSpdgNoausDg30fqaWdxgBTUAYbT7jhyS16i8cJ3IGCEGZifToCMPJcwUwWx7yMfEoc_hhyZcCAMAlM44td29V"/>
+<div class="absolute top-3 left-3 bg-[#f59e0b] text-on-primary text-label-sm font-label-sm px-2 py-1 rounded font-bold shadow-sm">
+                        Dining
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant mb-1">Café Colada</div>
+<h3 class="text-headline-md font-headline-md text-on-surface leading-tight">Morning Combo $4.99</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant flex-shrink-0 overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">local_cafe</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-4">Start your day right with a large café con leche and any pastry from our daily fresh selection. Available until 11 AM.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> Ongoing
+                        </span>
+<button class="text-primary-container hover:text-secondary font-label-md text-label-md flex items-center gap-1 transition-colors">
+                            View Offer <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination / Load More -->
+<div class="mt-stack-lg flex justify-center">
+<button class="border border-outline-variant text-primary-container hover:border-secondary hover:text-secondary bg-transparent px-6 py-2.5 rounded-lg text-label-md font-label-md font-bold transition-all flex items-center gap-2">
+                Load More Offers
+                <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-primary w-full py-stack-lg px-margin-desktop flex flex-col items-center gap-stack-md mt-auto border-t border-outline-variant dark:border-outline">
+<div class="text-headline-lg font-headline-lg text-secondary-fixed">
+            Hialeah Business Connect
+        </div>
+<div class="flex flex-wrap justify-center gap-4 text-label-sm font-label-sm">
+<a class="text-on-primary-container dark:text-primary-fixed-dim hover:text-secondary-fixed hover:opacity-80 transition-opacity" href="#">Privacy Policy</a>
+<span class="text-on-primary-container opacity-50">•</span>
+<a class="text-on-primary-container dark:text-primary-fixed-dim hover:text-secondary-fixed hover:opacity-80 transition-opacity" href="#">Terms of Service</a>
+<span class="text-on-primary-container opacity-50">•</span>
+<a class="text-on-primary-container dark:text-primary-fixed-dim hover:text-secondary-fixed hover:opacity-80 transition-opacity" href="#">Accessibility</a>
+<span class="text-on-primary-container opacity-50">•</span>
+<a class="text-on-primary-container dark:text-primary-fixed-dim hover:text-secondary-fixed hover:opacity-80 transition-opacity" href="#">Contact Support</a>
+</div>
+<div class="text-body-md font-body-md text-on-primary-container dark:text-primary-fixed text-center opacity-80 mt-2">
+            © 2024 Hialeah Business Connect. Powered by BizGen Technologies.
+        </div>
+</footer>
+</body></html>

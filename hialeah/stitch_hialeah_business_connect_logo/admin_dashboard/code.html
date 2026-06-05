@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hialeah Business Connect - Admin Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d6e3ff",
+                        "outline-variant": "#c4c6cf",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#bf7a00",
+                        "on-primary-fixed": "#001b3d",
+                        "primary": "#000a1e",
+                        "secondary-container": "#659dfe",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#331d00",
+                        "on-secondary-fixed": "#001a40",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#004491",
+                        "surface-tint": "#465f88",
+                        "surface": "#f7f9fb",
+                        "inverse-primary": "#aec7f6",
+                        "on-surface-variant": "#44474e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "outline": "#74777f",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#708ab5",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#003370",
+                        "on-error-container": "#93000a",
+                        "secondary": "#115cb9",
+                        "tertiary": "#140800",
+                        "secondary-fixed-dim": "#acc7ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002147",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-fixed": "#d7e2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "stack-md": "24px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- SHARED COMPONENT: SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen flex flex-col p-base bg-primary-container dark:bg-primary text-on-primary-container dark:text-primary-fixed w-64 shadow-lg z-50 flex-shrink-0">
+<!-- Header -->
+<div class="px-4 py-6 mb-4 border-b border-on-primary-fixed-variant">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md text-on-primary-container dark:text-primary-fixed m-0 p-0 leading-none">Admin Panel</h1>
+<p class="text-label-sm font-label-sm opacity-80 mt-1">Management Console</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-2 overflow-y-auto">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold text-label-md font-label-md transition-all" href="#" style="transform: scale(0.98);">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container dark:text-primary-fixed-dim hover:bg-on-primary-fixed-variant text-label-md font-label-md rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container dark:text-primary-fixed-dim hover:bg-on-primary-fixed-variant text-label-md font-label-md rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+                Business Listings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container dark:text-primary-fixed-dim hover:bg-on-primary-fixed-variant text-label-md font-label-md rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+                Users
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container dark:text-primary-fixed-dim hover:bg-on-primary-fixed-variant text-label-md font-label-md rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+<!-- CTA -->
+<div class="mt-auto pt-4">
+<button class="w-full bg-secondary text-on-secondary py-3 px-4 rounded-lg text-label-md font-label-md font-bold hover:bg-secondary-container hover:text-on-secondary-container transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">add</span>
+                New Report
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 overflow-y-auto bg-background p-margin-desktop h-screen relative">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-background m-0">Dashboard Overview</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Welcome back. Here is what's happening across Hialeah Business Connect.</p>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface border border-outline-variant rounded-lg text-label-md font-label-md text-secondary hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined">add_business</span>
+                    Add Business
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface border border-outline-variant rounded-lg text-label-md font-label-md text-secondary hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined">local_offer</span>
+                    Create Offer
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container rounded-lg text-label-md font-label-md hover:opacity-90 transition-opacity shadow-sm">
+<span class="material-symbols-outlined">fact_check</span>
+                    Approve Submissions
+                </button>
+</div>
+</header>
+<!-- Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mb-stack-lg">
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-start gap-4 hover:border-secondary transition-colors relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-110 transition-transform"></div>
+<div class="p-3 bg-primary-fixed rounded-lg text-on-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">store</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Businesses</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">1,248</h3>
+<p class="text-label-sm font-label-sm text-secondary mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +12% this month</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-start gap-4 hover:border-secondary transition-colors relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-110 transition-transform"></div>
+<div class="p-3 bg-error-container rounded-lg text-on-error-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Pending Approvals</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">42</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2 flex items-center gap-1">Requires review</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-start gap-4 hover:border-secondary transition-colors relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-110 transition-transform"></div>
+<div class="p-3 bg-tertiary-fixed rounded-lg text-on-tertiary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Featured Businesses</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">86</h3>
+<p class="text-label-sm font-label-sm text-secondary mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +5 new</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-start gap-4 hover:border-secondary transition-colors relative overflow-hidden group">
+<div class="p-3 bg-secondary-fixed rounded-lg text-on-secondary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Active Offers</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">315</h3>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-start gap-4 hover:border-secondary transition-colors relative overflow-hidden group">
+<div class="p-3 bg-surface-variant rounded-lg text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">ios</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Kiosk Locations</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">24</h3>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-6 border border-outline-variant shadow-sm flex items-start gap-4 hover:border-secondary transition-colors relative overflow-hidden group">
+<div class="p-3 bg-primary-fixed-dim rounded-lg text-on-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">ad_units</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Ad Placements</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mt-1">112</h3>
+</div>
+</div>
+</section>
+<!-- Tables Section -->
+<section class="grid grid-cols-1 xl:grid-cols-2 gap-gutter pb-stack-lg">
+<!-- Pending Submissions Table -->
+<div class="bg-surface border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+<h3 class="text-headline-md font-headline-md text-on-surface m-0">Pending Submissions</h3>
+<button class="text-label-sm font-label-sm text-secondary hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-label-sm font-label-sm text-on-surface-variant">
+<th class="p-4 font-medium border-b border-outline-variant">Business Name</th>
+<th class="p-4 font-medium border-b border-outline-variant">Category</th>
+<th class="p-4 font-medium border-b border-outline-variant">Date Submitted</th>
+<th class="p-4 font-medium border-b border-outline-variant">Action</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="hover:bg-surface-container-low transition-colors border-b border-outline-variant">
+<td class="p-4 font-medium text-on-surface">Hialeah Tech Solutions</td>
+<td class="p-4 text-on-surface-variant">IT Services</td>
+<td class="p-4 text-on-surface-variant">Oct 24, 2024</td>
+<td class="p-4">
+<button class="text-label-sm font-label-sm text-secondary bg-secondary-fixed px-3 py-1 rounded-full hover:opacity-80">Review</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors border-b border-outline-variant">
+<td class="p-4 font-medium text-on-surface">Miami Auto Detailing</td>
+<td class="p-4 text-on-surface-variant">Automotive</td>
+<td class="p-4 text-on-surface-variant">Oct 23, 2024</td>
+<td class="p-4">
+<button class="text-label-sm font-label-sm text-secondary bg-secondary-fixed px-3 py-1 rounded-full hover:opacity-80">Review</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-medium text-on-surface">La Abuela Bakery</td>
+<td class="p-4 text-on-surface-variant">Food &amp; Beverage</td>
+<td class="p-4 text-on-surface-variant">Oct 22, 2024</td>
+<td class="p-4">
+<button class="text-label-sm font-label-sm text-secondary bg-secondary-fixed px-3 py-1 rounded-full hover:opacity-80">Review</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Recent Listings Table -->
+<div class="bg-surface border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+<h3 class="text-headline-md font-headline-md text-on-surface m-0">Recent Listings</h3>
+<button class="text-label-sm font-label-sm text-secondary hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-label-sm font-label-sm text-on-surface-variant">
+<th class="p-4 font-medium border-b border-outline-variant">Business Name</th>
+<th class="p-4 font-medium border-b border-outline-variant">Status</th>
+<th class="p-4 font-medium border-b border-outline-variant">Added By</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="hover:bg-surface-container-low transition-colors border-b border-outline-variant">
+<td class="p-4 font-medium text-on-surface">Sunshine Florist</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-secondary-fixed-dim px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">Admin</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors border-b border-outline-variant">
+<td class="p-4 font-medium text-on-surface">Oka Coffee Roasters</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-secondary-fixed-dim px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">User Sub.</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-medium text-on-surface">Elite Fitness Center</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-secondary-fixed-dim px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">Admin</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+</body></html>

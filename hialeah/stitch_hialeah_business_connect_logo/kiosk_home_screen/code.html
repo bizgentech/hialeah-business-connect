@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hialeah Business Connect - Kiosk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#d6e3ff",
+                      "outline-variant": "#c4c6cf",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary-container": "#bf7a00",
+                      "on-primary-fixed": "#001b3d",
+                      "primary": "#000a1e",
+                      "secondary-container": "#659dfe",
+                      "surface-bright": "#f7f9fb",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-surface": "#191c1e",
+                      "surface-dim": "#d8dadc",
+                      "inverse-surface": "#2d3133",
+                      "tertiary-container": "#331d00",
+                      "on-secondary-fixed": "#001a40",
+                      "surface-container-low": "#f2f4f6",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-secondary-fixed-variant": "#004491",
+                      "surface-tint": "#465f88",
+                      "surface": "#f7f9fb",
+                      "inverse-primary": "#aec7f6",
+                      "on-surface-variant": "#44474e",
+                      "surface-container-high": "#e6e8ea",
+                      "on-primary": "#ffffff",
+                      "outline": "#74777f",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#708ab5",
+                      "primary-fixed-dim": "#aec7f6",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#003370",
+                      "on-error-container": "#93000a",
+                      "secondary": "#115cb9",
+                      "tertiary": "#140800",
+                      "secondary-fixed-dim": "#acc7ff",
+                      "on-tertiary-fixed": "#2a1700",
+                      "surface-variant": "#e0e3e5",
+                      "primary-container": "#002147",
+                      "on-background": "#191c1e",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "background": "#f7f9fb",
+                      "surface-container": "#eceef0",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "secondary-fixed": "#d7e2ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "stack-md": "24px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "stack-lg": "48px",
+                      "margin-mobile": "16px",
+                      "stack-sm": "12px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Outfit"],
+                      "label-md": ["Inter"],
+                      "display-lg-mobile": ["Outfit"],
+                      "headline-lg-mobile": ["Outfit"],
+                      "display-lg": ["Outfit"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbars for true kiosk feel */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Active state for touch feedback */
+        .touch-target:active {
+            transform: scale(0.98);
+            transition: transform 0.1s;
+        }
+    </style>
+</head>
+<body class="bg-surface select-none h-screen w-screen overflow-hidden flex flex-col font-body-lg text-on-surface antialiased">
+<!-- Top Header Bar (Adapted from Shared Component) -->
+<header class="flex justify-between items-center w-full px-margin-desktop py-stack-sm bg-surface-container-lowest border-b border-outline-variant shadow-sm shrink-0 h-20 z-10 relative">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-secondary text-[40px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">assured_workload</span>
+<div class="text-headline-lg font-headline-lg font-bold text-secondary tracking-tight">Hialeah Business Connect</div>
+</div>
+<div class="flex items-center gap-stack-md text-on-surface-variant">
+<div class="flex items-center gap-base px-4 py-2 bg-surface-container rounded-full touch-target cursor-pointer">
+<span class="material-symbols-outlined">language</span>
+<span class="text-body-lg font-body-lg font-medium">English</span>
+</div>
+<div class="text-headline-md font-headline-md font-medium" id="kiosk-clock">12:00 PM</div>
+</div>
+</header>
+<!-- Main Kiosk Layout -->
+<main class="flex-1 w-full h-full p-margin-desktop flex gap-gutter overflow-hidden box-border">
+<!-- Left Side: Navigation / Main Actions (7 columns wide conceptually) -->
+<section class="flex-[7] flex flex-col h-full bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-stack-md">
+<div class="mb-stack-lg">
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight leading-tight">Explore Hialeah<br/>Businesses Nearby</h1>
+<p class="text-headline-md font-headline-md text-on-surface-variant mt-2 font-normal">Tap a category to discover local services, dining, and more.</p>
+</div>
+<!-- Bento Grid for Touch Targets -->
+<div class="grid grid-cols-2 grid-rows-3 gap-base flex-1">
+<!-- Large Primary Button -->
+<div class="col-span-2 row-span-1 bg-primary-container text-on-primary-container rounded-lg p-stack-md flex items-center justify-between touch-target shadow-md cursor-pointer border border-primary-container border-opacity-10 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container to-secondary opacity-20 pointer-events-none"></div>
+<div class="flex flex-col z-10">
+<span class="text-headline-lg font-headline-lg font-bold">Explore Nearby</span>
+<span class="text-body-lg font-body-lg opacity-80 mt-1">View the interactive city map</span>
+</div>
+<div class="w-20 h-20 rounded-full bg-on-primary-container bg-opacity-20 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[48px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">near_me</span>
+</div>
+</div>
+<!-- Secondary Buttons -->
+<div class="bg-surface border border-outline-variant rounded-lg p-stack-md flex flex-col justify-center items-center gap-stack-sm touch-target cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[48px]">restaurant</span>
+<span class="text-headline-md font-headline-md text-primary">Restaurants</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-stack-md flex flex-col justify-center items-center gap-stack-sm touch-target cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[48px]">storefront</span>
+<span class="text-headline-md font-headline-md text-primary">Services</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-stack-md flex flex-col justify-center items-center gap-stack-sm touch-target cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-error-container rounded-bl-full flex items-start justify-end p-2 pointer-events-none">
+<span class="material-symbols-outlined text-on-error-container text-sm">local_fire_department</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[48px]">local_offer</span>
+<span class="text-headline-md font-headline-md text-primary">Offers</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-stack-md flex flex-col justify-center items-center gap-stack-sm touch-target cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[48px]">star</span>
+<span class="text-headline-md font-headline-md text-primary text-center">Featured Businesses</span>
+</div>
+</div>
+</section>
+<!-- Right Side: Context, QR, Ads (5 columns wide conceptually) -->
+<section class="flex-[5] flex flex-col gap-gutter h-full">
+<!-- Map Preview Panel -->
+<div class="flex-[2] bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col touch-target cursor-pointer relative group">
+<div class="absolute top-4 left-4 z-10 bg-surface-container-lowest px-4 py-2 rounded-full shadow-md flex items-center gap-2 border border-outline-variant pointer-events-none">
+<span class="material-symbols-outlined text-error text-xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-label-md font-label-md text-primary">You are here</span>
+</div>
+<div class="w-full h-full relative bg-surface-container">
+<!-- Map Placeholder Image -->
+<img alt="Map" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stylized, modern digital map interface displaying a detailed urban grid, reminiscent of a high-end GPS navigation system. The map features a light-mode aesthetic with soft white and gray roads, subtle blue waterways, and distinct golden and navy map pins indicating local business locations. The lighting is even and flat, emphasizing clarity and high contrast for easy reading on a digital display. The overall style is clean, civic-tech focused, and highly professional, utilizing the specific brand colors of deep navy and warm gold to highlight key areas." data-location="Hialeah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkRjjmK9yjU8CFg1ORiB33WbaTTZVGjvWEuYnR1_mGL4V-VX83UCdJdj9CTugZR9xuJkVy5aa-tiY6YpcXMG7I5cFgJ5jqoSiuYrMGMNghT85kqvbDxiRXsHAQBfBLAc-f5aZ9qgysaQO7swEH_zL77lsWt2K2i7QDNY0Zq2dr0JxG5-fcEVQzXqEJbT6bXQjppqVKX1NHxYHkb5bYs8qnOXrMFRDFFGh86ncQfP8nye-H6W0iAVNpwaFEdLtlfDLFLnZHd1ZLXDSz"/>
+<!-- Overlay gradient for better text readability if needed, though pin is solid -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 pointer-events-none">
+<span class="text-body-md font-body-md font-medium">Tap to expand map</span>
+<span class="material-symbols-outlined text-sm">open_in_full</span>
+</div>
+</div>
+</div>
+<!-- Action: Send to Phone / QR Area -->
+<div class="flex-1 bg-secondary-container rounded-xl shadow-sm p-stack-md flex items-center justify-between border border-secondary-container border-opacity-20 touch-target cursor-pointer">
+<div class="flex flex-col gap-2 max-w-[60%]">
+<div class="flex items-center gap-2 text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px]">send_to_mobile</span>
+<h2 class="text-headline-md font-headline-md font-bold">Send to Phone</h2>
+</div>
+<p class="text-body-lg font-body-lg text-on-secondary-container opacity-90 leading-tight">
+                        Scan the QR code to continue browsing on your personal device.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg shadow-sm border border-outline-variant shrink-0">
+<!-- Simulated QR Code placeholder using a pattern -->
+<div class="w-24 h-24 bg-surface-container relative">
+<div class="absolute inset-2 border-4 border-primary"></div>
+<div class="absolute inset-4 bg-primary pattern-dots pattern-primary pattern-bg-surface-container pattern-size-2 pattern-opacity-100"></div>
+<div class="absolute top-2 left-2 w-4 h-4 bg-primary"></div>
+<div class="absolute top-2 right-2 w-4 h-4 bg-primary"></div>
+<div class="absolute bottom-2 left-2 w-4 h-4 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Ad Zone: Featured Local Business -->
+<div class="flex-1 rounded-xl shadow-sm overflow-hidden relative group cursor-pointer touch-target border border-outline-variant">
+<img alt="Featured Business" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A brightly lit, welcoming interior of a modern local coffee shop or bakery. The space features clean lines, warm wood textures, and bright white counters, illuminated by natural sunlight streaming through large windows. The aesthetic is highly professional yet approachable, fitting a high-quality local business spotlight. The atmosphere is energetic and inviting, perfectly aligning with a modern civic-tech directory's standard for premium business presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYylv85nQoZLPWKcMaVI7ymOYAeSNqhdoXC_QQKjHA3avLRLT4fuqlbUaD5Sl4aKLxHu2BndwhbFIOOxp2WiPklo1uRsfhOHZ6FBgpBek8UbqOCl2mxdfdoBoi3_EmIBXig3BFpj4wPl5V_d1k6JtS93uC3L_H6roh96n8ptQKU6LDqXJvR5V0fyO2PkajEClCrJ_2R0S8-qprXmNPaEPSQ6pGqq-difwa3iEQAMhe5kWhMD-n6pw8jKMXDrX7sHL9pR1WEfJPpaIp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex flex-col justify-end p-stack-md pointer-events-none">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm font-bold uppercase tracking-wider px-2 py-1 rounded w-max mb-2 shadow-sm">
+                        Featured Local Business
+                    </div>
+<h3 class="text-headline-md font-headline-md text-on-primary font-bold">Cafe Havana Central</h3>
+<p class="text-body-md font-body-md text-surface-bright opacity-90 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> 0.2 miles away
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // Simple clock script for the kiosk header
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            
+            const strTime = hours + ':' + minutes + ' ' + ampm;
+            const clockEl = document.getElementById('kiosk-clock');
+            if(clockEl) {
+                clockEl.textContent = strTime;
+            }
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock(); // initial call
+    </script>
+</body></html>

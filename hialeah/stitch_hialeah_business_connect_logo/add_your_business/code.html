@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Your Business - Hialeah Business Connect</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d6e3ff",
+                        "outline-variant": "#c4c6cf",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#bf7a00",
+                        "on-primary-fixed": "#001b3d",
+                        "primary": "#000a1e",
+                        "secondary-container": "#659dfe",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#331d00",
+                        "on-secondary-fixed": "#001a40",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#004491",
+                        "surface-tint": "#465f88",
+                        "surface": "#f7f9fb",
+                        "inverse-primary": "#aec7f6",
+                        "on-surface-variant": "#44474e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "outline": "#74777f",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#708ab5",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#003370",
+                        "on-error-container": "#93000a",
+                        "secondary": "#115cb9",
+                        "tertiary": "#140800",
+                        "secondary-fixed-dim": "#acc7ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#002147",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "secondary-fixed": "#d7e2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "stack-md": "24px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm border-b border-outline-variant w-full relative z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand Logo -->
+<a class="text-headline-md font-headline-md font-bold text-secondary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined icon-fill text-tertiary-fixed-dim text-3xl">location_city</span>
+                Hialeah Business Connect
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors px-3 py-2 rounded-DEFAULT text-label-md font-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors px-3 py-2 rounded-DEFAULT text-label-md font-label-md" href="#">Businesses</a>
+<a class="text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors px-3 py-2 rounded-DEFAULT text-label-md font-label-md" href="#">Offers</a>
+<a class="text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors px-3 py-2 rounded-DEFAULT text-label-md font-label-md" href="#">Kiosks</a>
+<a class="text-secondary border-b-2 border-secondary pb-1 text-label-md font-label-md opacity-80 duration-150" href="#">Add Your Business</a>
+<a class="text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-colors px-3 py-2 rounded-DEFAULT text-label-md font-label-md" href="#">Contact</a>
+</nav>
+<!-- Trailing CTA -->
+<div class="hidden md:block">
+<a class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm" href="#">
+                    Add Your Business Free
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg relative z-0">
+<!-- Hero / Intro -->
+<section class="text-center max-w-3xl mx-auto flex flex-col gap-4 relative">
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-secondary/5 rounded-full blur-2xl -z-10"></div>
+<div class="absolute top-0 right-10 w-24 h-24 bg-tertiary-fixed-dim/10 rounded-full blur-xl -z-10"></div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary">
+                Add Your Business for Free
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Join Hialeah Business Connect to increase your local visibility, reach more customers, and become part of our growing civic-tech network.
+            </p>
+</section>
+<!-- Layout Grid: Benefits (Left/Top) + Form (Right/Bottom) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Benefits Cards -->
+<div class="lg:col-span-4 flex flex-col gap-stack-md lg:sticky lg:top-24">
+<h2 class="font-headline-md text-headline-md text-primary-container mb-2">Why Join?</h2>
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex gap-4 items-start shadow-sm hover:border-secondary hover:shadow-md transition-all duration-200">
+<div class="bg-primary-fixed p-2 rounded-lg text-secondary mt-1">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Free listing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Create a comprehensive profile for your business at no cost.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex gap-4 items-start shadow-sm hover:border-secondary hover:shadow-md transition-all duration-200">
+<div class="bg-primary-fixed p-2 rounded-lg text-secondary mt-1">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Local reach</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Connect directly with residents and visitors in the Hialeah area.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex gap-4 items-start shadow-sm hover:border-secondary hover:shadow-md transition-all duration-200">
+<div class="bg-primary-fixed p-2 rounded-lg text-secondary mt-1">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Kiosk visibility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Get featured on our network of interactive city kiosks.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex gap-4 items-start shadow-sm hover:border-secondary hover:shadow-md transition-all duration-200">
+<div class="bg-primary-fixed p-2 rounded-lg text-secondary mt-1">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Marketing support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Access tools and assistance to boost your digital presence.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Submission Form -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden relative">
+<!-- Decorative top border -->
+<div class="h-1 w-full bg-gradient-to-r from-secondary to-tertiary-fixed-dim"></div>
+<form class="p-6 md:p-8 flex flex-col gap-stack-md">
+<!-- Section: Basic Info -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-primary-container border-b border-outline-variant pb-2">Business Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="businessName">Business Name <span class="text-error">*</span></label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="businessName" placeholder="e.g. Hialeah Bakery" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="category">Category <span class="text-error">*</span></label>
+<select class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all appearance-none" id="category">
+<option disabled="" selected="" value="">Select a category</option>
+<option value="food">Food &amp; Dining</option>
+<option value="retail">Retail</option>
+<option value="services">Professional Services</option>
+<option value="health">Health &amp; Wellness</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="description">Description <span class="text-error">*</span></label>
+<textarea class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all resize-none" id="description" placeholder="Briefly describe your products or services..." rows="3"></textarea>
+</div>
+</div>
+<!-- Section: Contact Info -->
+<div class="flex flex-col gap-4 mt-2">
+<h3 class="font-headline-md text-headline-md text-primary-container border-b border-outline-variant pb-2">Contact Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="contactPerson">Contact Person <span class="text-error">*</span></label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="contactPerson" placeholder="Full Name" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="phone">Phone Number <span class="text-error">*</span></label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="phone" placeholder="(305) 555-0123" type="tel"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="email">Email Address <span class="text-error">*</span></label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="email" placeholder="contact@business.com" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="website">Website (Optional)</label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="website" placeholder="https://www.yourbusiness.com" type="url"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="address">Physical Address <span class="text-error">*</span></label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="address" placeholder="Street address, City, Zip Code" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="social">Social Media Link (Optional)</label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="social" placeholder="Instagram or Facebook URL" type="url"/>
+</div>
+</div>
+<!-- Section: Media & Promos -->
+<div class="flex flex-col gap-4 mt-2">
+<h3 class="font-headline-md text-headline-md text-primary-container border-b border-outline-variant pb-2">Media &amp; Promotions</h3>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Logo Upload</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-6 flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline text-4xl mb-2 group-hover:text-secondary transition-colors">cloud_upload</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Click to upload or drag and drop<br/><span class="text-sm">SVG, PNG, JPG (max. 2MB)</span></p>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<label class="font-label-md text-label-md text-on-surface" for="promo">Optional Promo or Offer</label>
+<input class="border border-outline-variant bg-surface rounded-DEFAULT px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" id="promo" placeholder="e.g. 10% off for new customers mentioning the kiosk" type="text"/>
+</div>
+</div>
+<!-- Marketing Checkbox -->
+<div class="mt-4 bg-surface-bright border border-outline-variant rounded-lg p-4 flex items-start gap-3">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary/50" id="marketingHelp" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant cursor-pointer" for="marketingHelp">
+<span class="font-label-md text-label-md text-on-surface block mb-1">Marketing Support</span>
+                            I would like help with website creation, Google Business Profile setup, or other digital marketing services.
+                        </label>
+</div>
+<!-- Submit Area -->
+<div class="mt-6 flex flex-col items-center gap-4">
+<button class="bg-tertiary-fixed-dim text-tertiary w-full md:w-auto px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity shadow-sm flex items-center justify-center gap-2" type="button">
+                            Submit Free Listing
+                            <span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<p class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                            Listings may be reviewed before being published to ensure quality.
+                        </p>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container w-full py-stack-lg px-margin-desktop flex flex-col items-center gap-stack-md border-t border-outline-variant mt-auto">
+<div class="text-headline-lg font-headline-lg text-secondary-fixed">
+            Hialeah Business Connect
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-primary-container hover:text-secondary-fixed text-label-sm font-label-sm hover:opacity-80 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-primary-container hover:text-secondary-fixed text-label-sm font-label-sm hover:opacity-80 transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-secondary-fixed text-label-sm font-label-sm hover:opacity-80 transition-opacity" href="#">Accessibility</a>
+<a class="text-on-primary-container hover:text-secondary-fixed text-label-sm font-label-sm hover:opacity-80 transition-opacity" href="#">Contact Support</a>
+</div>
+<p class="text-body-md font-body-md text-on-primary-container text-center mt-4">
+            © 2024 Hialeah Business Connect. Powered by BizGen Technologies.
+        </p>
+</footer>
+</body></html>
