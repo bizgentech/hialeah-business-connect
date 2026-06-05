@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -14,7 +14,14 @@ const outfit = Outfit({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#002147",
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"
+  ),
   title: {
     default: "Hialeah Business Connect",
     template: "%s – Hialeah Business Connect",
@@ -22,7 +29,6 @@ export const metadata: Metadata = {
   description:
     "Discover and connect with local businesses in Hialeah, FL. Powered by BizGen Technologies.",
   manifest: "/manifest.json",
-  themeColor: "#002147",
   applicationName: "Hialeah Business Connect",
   keywords: ["Hialeah", "local business", "directory", "Miami-Dade", "Florida"],
   openGraph: {
