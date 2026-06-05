@@ -13,6 +13,14 @@ export const BUSINESSES: Business[] = [
     website: "https://example.com",
     isFeatured: true,
     isVerified: true,
+    // Stitch scene: warm restaurant interior
+    image: "/assets/scenes/directory-restaurant.jpg",
+    // Profile gallery (Stitch scenes: cafe interior, latte, pastries)
+    galleryImages: [
+      "/assets/scenes/profile-cafe-interior.jpg",
+      "/assets/scenes/profile-latte.jpg",
+      "/assets/scenes/profile-pastries.jpg",
+    ],
   },
   {
     id: "2",
@@ -23,6 +31,9 @@ export const BUSINESSES: Business[] = [
       "Your reliable source for automotive parts and accessories. Locally owned and operated with expert advice.",
     phone: "305-555-0102",
     isVerified: true,
+    // No specific auto image from Stitch — placeholder slot
+    image: null,
+    galleryImages: [],
   },
   {
     id: "3",
@@ -33,6 +44,9 @@ export const BUSINESSES: Business[] = [
       "Comprehensive tax prep and financial planning for small businesses and individuals in Miami-Dade.",
     phone: "305-555-0103",
     website: "https://example.com",
+    // Stitch scene: modern office
+    image: "/assets/scenes/directory-office.jpg",
+    galleryImages: ["/assets/scenes/offers-office.jpg"],
   },
   {
     id: "4",
@@ -43,6 +57,9 @@ export const BUSINESSES: Business[] = [
       "Fresh floral arrangements and unique gift baskets for every occasion. Same-day delivery available.",
     phone: "305-555-0104",
     isVerified: true,
+    // Stitch scene: merchandise display
+    image: "/assets/scenes/offers-merchandise.jpg",
+    galleryImages: [],
   },
   {
     id: "5",
@@ -55,6 +72,9 @@ export const BUSINESSES: Business[] = [
     website: "https://example.com",
     isFeatured: true,
     isVerified: true,
+    // Stitch scene: modern clinic
+    image: "/assets/scenes/homepage-clinic.jpg",
+    galleryImages: [],
   },
   {
     id: "6",
@@ -64,6 +84,9 @@ export const BUSINESSES: Business[] = [
     description:
       "Fast and reliable phone, tablet, and computer repair. Most repairs completed in under 2 hours.",
     phone: "305-555-0106",
+    // No specific tech image from Stitch — placeholder slot
+    image: null,
+    galleryImages: [],
   },
 ];
 
@@ -78,6 +101,8 @@ export const OFFERS: Offer[] = [
     discount: "20% OFF",
     expires: "Jun 30, 2026",
     isHot: true,
+    // Stitch scene: bakery/cafe
+    image: "/assets/scenes/offers-bakery.jpg",
   },
   {
     id: "2",
@@ -88,6 +113,8 @@ export const OFFERS: Offer[] = [
       "New patients receive their first consultation and adjustment at no cost. No insurance required.",
     discount: "FREE",
     expires: "Jul 15, 2026",
+    // Stitch scene: clinic interior (reused)
+    image: "/assets/scenes/homepage-clinic.jpg",
   },
   {
     id: "3",
@@ -99,6 +126,8 @@ export const OFFERS: Offer[] = [
     discount: "15% OFF",
     expires: "Jun 20, 2026",
     isHot: true,
+    // Stitch scene: modern office (closest to services)
+    image: "/assets/scenes/offers-office.jpg",
   },
   {
     id: "4",
@@ -109,7 +138,17 @@ export const OFFERS: Offer[] = [
       "Purchase any arrangement over $40 and receive a complimentary gift card for $10.",
     discount: "$10 BONUS",
     expires: "Aug 1, 2026",
+    // Stitch scene: merchandise display
+    image: "/assets/scenes/offers-merchandise.jpg",
   },
+];
+
+// Featured homepage scene images (Stitch: homepage variants)
+export const HOMEPAGE_SCENES = [
+  { src: "/assets/scenes/homepage-coffee-shop.jpg", alt: "Local coffee roaster shop interior" },
+  { src: "/assets/scenes/homepage-boutique.jpg", alt: "Clothing boutique interior" },
+  { src: "/assets/scenes/homepage-clinic.jpg", alt: "Modern medical clinic reception" },
+  { src: "/assets/scenes/homepage-restaurant.jpg", alt: "Casual dining restaurant" },
 ];
 
 export const CATEGORIES = [

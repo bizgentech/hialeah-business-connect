@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -67,13 +68,23 @@ export default async function BusinessProfilePage({ params }: PageProps) {
               >
                 <div className="flex items-start gap-5">
                   <div
-                    className="w-24 h-24 rounded-xl flex-shrink-0 flex items-center justify-center"
+                    className="w-24 h-24 rounded-xl flex-shrink-0 overflow-hidden flex items-center justify-center"
                     style={{
                       backgroundColor: "var(--color-surface-container)",
                       border: "1px solid var(--color-outline-variant)",
                     }}
                   >
-                    <BuildingIcon />
+                    {business.image ? (
+                      <Image
+                        src={business.image}
+                        alt={`${business.name} storefront`}
+                        width={96}
+                        height={96}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <BuildingIcon />
+                    )}
                   </div>
                   <div className="flex-grow">
                     <div className="flex flex-wrap gap-2 mb-2">
@@ -126,7 +137,7 @@ export default async function BusinessProfilePage({ params }: PageProps) {
                 </p>
               </div>
 
-              {/* Gallery placeholder */}
+              {/* Gallery */}
               <div
                 className="bg-white rounded-xl p-6 shadow-ambient"
                 style={{ border: "1px solid var(--color-outline-variant)" }}
@@ -141,18 +152,31 @@ export default async function BusinessProfilePage({ params }: PageProps) {
                   Photo Gallery
                 </h2>
                 <div className="grid grid-cols-3 gap-3">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="aspect-square rounded-lg flex items-center justify-center"
-                      style={{
-                        backgroundColor: "var(--color-surface-container)",
-                        border: "1px solid var(--color-outline-variant)",
-                      }}
-                    >
-                      <ImageIcon />
-                    </div>
-                  ))}
+                  {Array.from({ length: 3 }).map((_, i) => {
+                    const src = business.galleryImages?.[i];
+                    return (
+                      <div
+                        key={i}
+                        className="aspect-square rounded-lg overflow-hidden flex items-center justify-center relative"
+                        style={{
+                          backgroundColor: "var(--color-surface-container)",
+                          border: "1px solid var(--color-outline-variant)",
+                        }}
+                      >
+                        {src ? (
+                          <Image
+                            src={src}
+                            alt={`${business.name} photo ${i + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 30vw, 200px"
+                          />
+                        ) : (
+                          <ImageIcon />
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

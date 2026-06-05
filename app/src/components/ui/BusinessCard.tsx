@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Badge from "./Badge";
 
 export interface Business {
@@ -9,7 +10,8 @@ export interface Business {
   description: string;
   phone?: string;
   website?: string;
-  image?: string;
+  image?: string | null;
+  galleryImages?: string[];
   isFeatured?: boolean;
   isVerified?: boolean;
 }
@@ -25,6 +27,7 @@ export default function BusinessCard({ business }: BusinessCardProps) {
       style={{ border: "1px solid var(--color-outline-variant)" }}
     >
       <div className="flex gap-4 items-start">
+        {/* Thumbnail */}
         <div
           className="w-20 h-20 rounded-lg overflow-hidden shrink-0 flex items-center justify-center"
           style={{
@@ -33,24 +36,24 @@ export default function BusinessCard({ business }: BusinessCardProps) {
           }}
         >
           {business.image ? (
-            <img
+            <Image
               src={business.image}
-              alt={business.name}
+              alt={`${business.name} – ${business.category} in ${business.area}`}
+              width={80}
+              height={80}
               className="w-full h-full object-cover"
             />
           ) : (
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              style={{ color: "var(--color-outline)" }}
+            // Gradient placeholder — slot kept ready for future image
+            <div
+              className="w-full h-full flex items-center justify-center"
+              style={{
+                background:
+                  "linear-gradient(135deg, var(--color-surface-container-high) 0%, var(--color-surface-container-highest) 100%)",
+              }}
             >
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
+              <StorefrontIcon />
+            </div>
           )}
         </div>
 
@@ -94,7 +97,7 @@ export default function BusinessCard({ business }: BusinessCardProps) {
               {business.phone && (
                 <a
                   href={`tel:${business.phone}`}
-                  className="transition-colors hover:text-[var(--color-secondary)]"
+                  className="transition-colors hover:text-[--color-secondary]"
                   title="Call"
                 >
                   <PhoneIcon />
@@ -105,14 +108,14 @@ export default function BusinessCard({ business }: BusinessCardProps) {
                   href={business.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-[var(--color-secondary)]"
+                  className="transition-colors hover:text-[--color-secondary]"
                   title="Website"
                 >
                   <GlobeIcon />
                 </a>
               )}
               <button
-                className="transition-colors hover:text-[var(--color-secondary)]"
+                className="transition-colors hover:text-[--color-secondary]"
                 title="Directions"
               >
                 <DirectionsIcon />
@@ -133,6 +136,14 @@ export default function BusinessCard({ business }: BusinessCardProps) {
   );
 }
 
+function StorefrontIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: "var(--color-outline)" }}>
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  );
+}
+
 function PhoneIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -144,9 +155,7 @@ function PhoneIcon() {
 function GlobeIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="12" cy="12" r="10" />
-      <line x1="2" y1="12" x2="22" y2="12" />
-      <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+      <circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
     </svg>
   );
 }

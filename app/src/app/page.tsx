@@ -3,7 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BusinessCard from "@/components/ui/BusinessCard";
 import OfferCard from "@/components/ui/OfferCard";
-import { BUSINESSES, OFFERS, CATEGORIES } from "@/lib/data";
+import Image from "next/image";
+import { BUSINESSES, OFFERS, CATEGORIES, HOMEPAGE_SCENES } from "@/lib/data";
 
 export default function HomePage() {
   const featured = BUSINESSES.filter((b) => b.isFeatured);
@@ -155,6 +156,24 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Scene strip — 4 Stitch community photos */}
+        <section className="overflow-hidden" style={{ backgroundColor: "var(--color-surface-container)" }}>
+          <div className="flex h-52 md:h-64">
+            {HOMEPAGE_SCENES.map((scene, i) => (
+              <div key={i} className="flex-1 relative overflow-hidden">
+                <Image
+                  src={scene.src}
+                  alt={scene.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="25vw"
+                  priority={i === 0}
+                />
+              </div>
+            ))}
           </div>
         </section>
 

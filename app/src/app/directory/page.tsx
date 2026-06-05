@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BusinessCard from "@/components/ui/BusinessCard";
@@ -166,23 +167,38 @@ export default function DirectoryPage() {
               )}
             </div>
 
-            {/* Map panel */}
+            {/* Map panel — Stitch scene: directory-map.jpg */}
             <div
-              className="w-full lg:w-2/5 xl:w-1/3 lg:sticky top-24 rounded-xl overflow-hidden shadow-ambient"
+              className="w-full lg:w-2/5 xl:w-1/3 lg:sticky top-24 rounded-xl overflow-hidden shadow-ambient relative"
               style={{
                 height: "400px",
                 border: "1px solid var(--color-outline-variant)",
-                backgroundColor: "var(--color-surface-container)",
               }}
             >
-              <div
-                className="w-full h-full flex flex-col items-center justify-center gap-3"
-                style={{ color: "var(--color-on-surface-variant)" }}
-              >
-                <MapIcon />
-                <p className="text-sm font-semibold">Interactive Map</p>
-                <p className="text-xs text-center px-8">
-                  Map integration will be connected to the production database.
+              <Image
+                src="/assets/scenes/directory-map.jpg"
+                alt="Stylized map of Hialeah business locations"
+                fill
+                className="object-cover opacity-60"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+              {/* Overlay label */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 pointer-events-none">
+                <div
+                  className="px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.85)",
+                    color: "var(--color-primary-container)",
+                    border: "1px solid var(--color-outline-variant)",
+                  }}
+                >
+                  🗺 Interactive Map
+                </div>
+                <p
+                  className="text-xs text-center px-8 font-medium"
+                  style={{ color: "rgba(255,255,255,0.9)", textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}
+                >
+                  Full map connects to production database
                 </p>
               </div>
             </div>

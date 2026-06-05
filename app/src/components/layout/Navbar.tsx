@@ -3,6 +3,34 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+/** Inlined from /public/assets/logo.svg — Stitch asset, geometric H + growth arrow */
+function LogoMark({ size = 36 }: { size?: number }) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      aria-hidden="true"
+    >
+      <path
+        d="M20 20V80M20 50H80M80 20V80"
+        stroke="#002147"
+        strokeWidth="12"
+        strokeLinecap="round"
+      />
+      <path
+        d="M40 35L50 25L60 35M50 25V65"
+        stroke="#f59e0b"
+        strokeWidth="8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="50" cy="75" r="5" fill="#00bcd4" />
+    </svg>
+  );
+}
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/directory", label: "Businesses" },
@@ -31,12 +59,13 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="font-bold text-xl"
+            className="flex items-center gap-2.5 font-bold text-xl"
             style={{
               fontFamily: "var(--font-outfit)",
               color: "var(--color-secondary)",
             }}
           >
+            <LogoMark size={36} />
             Hialeah Business Connect
           </Link>
 
@@ -85,12 +114,13 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          className="font-bold text-lg"
+          className="flex items-center gap-2 font-bold text-lg"
           style={{
             fontFamily: "var(--font-outfit)",
             color: "var(--color-secondary)",
           }}
         >
+          <LogoMark size={28} />
           Hialeah Connect
         </Link>
         <button

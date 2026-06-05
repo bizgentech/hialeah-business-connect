@@ -15,9 +15,37 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Hialeah Business Connect",
+  title: {
+    default: "Hialeah Business Connect",
+    template: "%s – Hialeah Business Connect",
+  },
   description:
     "Discover and connect with local businesses in Hialeah, FL. Powered by BizGen Technologies.",
+  manifest: "/manifest.json",
+  themeColor: "#002147",
+  applicationName: "Hialeah Business Connect",
+  keywords: ["Hialeah", "local business", "directory", "Miami-Dade", "Florida"],
+  openGraph: {
+    type: "website",
+    siteName: "Hialeah Business Connect",
+    title: "Hialeah Business Connect",
+    description:
+      "Discover and connect with local businesses in Hialeah, FL.",
+    images: [
+      {
+        url: "/assets/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Hialeah Business Connect logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Hialeah Business Connect",
+    description: "Discover local businesses in Hialeah, FL.",
+    images: ["/assets/logo.png"],
+  },
 };
 
 export default function RootLayout({

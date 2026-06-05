@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BUSINESSES } from "@/lib/data";
 
 export const metadata = {
@@ -134,37 +135,38 @@ export default function KioskMapPage() {
           </div>
         </div>
 
-        {/* Map area */}
+        {/* Map area — Stitch scene: kiosk-map.jpg */}
         <div
-          className="flex-grow flex flex-col items-center justify-center gap-4 p-8"
+          className="flex-grow relative overflow-hidden"
           style={{ backgroundColor: "var(--color-surface-container)" }}
         >
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            style={{ color: "var(--color-outline)" }}
-          >
-            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-            <line x1="8" y1="2" x2="8" y2="18" />
-            <line x1="16" y1="6" x2="16" y2="22" />
-          </svg>
-          <p
-            className="text-lg font-semibold"
-            style={{ color: "var(--color-on-surface-variant)" }}
-          >
-            Interactive Map View
-          </p>
-          <p
-            className="text-sm text-center max-w-xs"
-            style={{ color: "var(--color-outline)" }}
-          >
-            Map integration (Google Maps or Mapbox) will be connected to the
-            production database with live business coordinates.
-          </p>
+          <Image
+            src="/assets/scenes/kiosk-map.jpg"
+            alt="Stylized digital map of Hialeah business locations"
+            fill
+            className="object-cover opacity-70"
+            sizes="60vw"
+            priority
+          />
+          {/* Floating badge */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
+            <div
+              className="px-5 py-2.5 rounded-xl text-sm font-semibold backdrop-blur-sm shadow-ambient"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.9)",
+                color: "var(--color-primary-container)",
+                border: "1px solid var(--color-outline-variant)",
+              }}
+            >
+              🗺 Interactive Map — Coming Soon
+            </div>
+            <p
+              className="text-xs font-medium"
+              style={{ color: "rgba(255,255,255,0.9)", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}
+            >
+              Google Maps / Mapbox integration connects to live database
+            </p>
+          </div>
         </div>
       </div>
     </div>
