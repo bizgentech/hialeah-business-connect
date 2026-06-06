@@ -1,39 +1,38 @@
 import Link from "next/link";
 
-/** Inline BizGen logo mark — rounded-square with teal accent */
-function BizGenLogo({ size = 48 }: { size?: number }) {
+/** Inline BizGen logo — rounded rectangle, horizontal BizGen wordmark + TECHNOLOGIES */
+function BizGenLogo() {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
+    <div
+      className="flex-shrink-0 flex flex-col items-center justify-center rounded-xl px-3 py-2 transition-transform group-hover:scale-105"
+      style={{
+        border: "2px solid #2dd4bf",
+        minWidth: "80px",
+        background: "rgba(45,212,191,0.06)",
+      }}
     >
-      {/* Rounded square container */}
-      <rect x="4" y="4" width="92" height="92" rx="18" ry="18"
-        fill="none" stroke="#0d9488" strokeWidth="5" />
-      {/* "B" bar top */}
-      <text
-        x="50" y="44"
-        textAnchor="middle"
-        fontFamily="Georgia, serif"
-        fontWeight="700"
-        fontSize="28"
-        fill="#0f172a"
-      >Biz</text>
-      {/* "Gen" in teal */}
-      <text
-        x="50" y="72"
-        textAnchor="middle"
-        fontFamily="Georgia, serif"
-        fontWeight="700"
-        fontSize="28"
-        fill="#0d9488"
-      >Gen</text>
-      {/* Bottom accent line */}
-      <line x1="24" y1="82" x2="76" y2="82" stroke="#0d9488" strokeWidth="3" strokeLinecap="round" />
-    </svg>
+      {/* BizGen wordmark */}
+      <p
+        className="font-bold leading-none tracking-tight"
+        style={{ fontSize: "1.15rem", fontFamily: "Georgia, serif" }}
+      >
+        <span style={{ color: "#ffffff" }}>Biz</span>
+        <span style={{ color: "#2dd4bf" }}>Gen</span>
+        <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.55rem", verticalAlign: "super" }}>®</span>
+      </p>
+      {/* TECHNOLOGIES label */}
+      <p
+        className="tracking-widest uppercase mt-0.5"
+        style={{
+          fontSize: "0.38rem",
+          color: "rgba(255,255,255,0.55)",
+          letterSpacing: "0.18em",
+          fontFamily: "var(--font-outfit, sans-serif)",
+        }}
+      >
+        Technologies
+      </p>
+    </div>
   );
 }
 
@@ -149,8 +148,8 @@ export default function Footer() {
         rel="noopener noreferrer"
         className="block relative overflow-hidden border-t group"
         style={{
-          backgroundColor: "rgba(255,255,255,0.03)",
-          borderColor: "rgba(255,255,255,0.08)",
+          backgroundColor: "rgba(0,0,0,0.25)",
+          borderColor: "rgba(45,212,191,0.2)",
         }}
         aria-label="Powered by BizGen Technologies — visit www.bgtecnologies.com"
       >
@@ -158,56 +157,54 @@ export default function Footer() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: "radial-gradient(circle, rgba(13,148,136,0.15) 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(circle, rgba(45,212,191,0.18) 1px, transparent 1px)",
             backgroundSize: "22px 22px",
           }}
         />
-        {/* Decorative teal circles */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full pointer-events-none"
-          style={{ backgroundColor: "rgba(13,148,136,0.07)", filter: "blur(8px)" }} />
-        <div className="absolute right-24 top-2 w-8 h-8 rounded-full pointer-events-none"
-          style={{ backgroundColor: "rgba(13,148,136,0.1)", filter: "blur(4px)" }} />
+        {/* Decorative teal glows */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 w-32 h-32 rounded-full pointer-events-none"
+          style={{ backgroundColor: "rgba(45,212,191,0.08)", filter: "blur(20px)" }} />
+        <div className="absolute right-28 top-1 w-10 h-10 rounded-full pointer-events-none"
+          style={{ backgroundColor: "rgba(45,212,191,0.12)", filter: "blur(8px)" }} />
 
         <div
-          className="relative mx-auto px-6 md:px-10 py-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-0"
+          className="relative mx-auto px-6 md:px-10 py-4 flex flex-col sm:flex-row items-center gap-5 sm:gap-0"
           style={{ maxWidth: "1280px" }}
         >
           {/* Logo + divider + text */}
-          <div className="flex items-center gap-4 sm:flex-1">
-            {/* Logo mark */}
-            <div className="flex-shrink-0 transition-transform group-hover:scale-105">
-              <BizGenLogo size={44} />
-            </div>
+          <div className="flex items-center gap-5 sm:flex-1">
+            {/* Logo */}
+            <BizGenLogo />
 
             {/* Vertical divider */}
-            <div className="hidden sm:block w-px self-stretch" style={{ backgroundColor: "rgba(13,148,136,0.35)" }} />
+            <div className="hidden sm:block w-px self-stretch" style={{ backgroundColor: "rgba(45,212,191,0.3)" }} />
 
             {/* Text block */}
             <div>
               <p
-                className="font-bold text-sm leading-tight"
-                style={{ fontFamily: "var(--font-outfit)", color: "#ffffff" }}
+                className="font-bold leading-tight"
+                style={{ fontFamily: "var(--font-outfit)", color: "#ffffff", fontSize: "0.95rem" }}
               >
                 Powered by{" "}
                 <span style={{ color: "#2dd4bf" }}>BizGen</span>{" "}
                 Technologies
               </p>
               {/* Teal underline accent */}
-              <div className="mt-0.5 mb-1 h-0.5 w-10 rounded-full" style={{ backgroundColor: "#0d9488" }} />
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                <span style={{ color: "#2dd4bf" }}>Custom Solutions</span>{" "}
+              <div className="mt-1 mb-1.5 h-0.5 w-10 rounded-full" style={{ backgroundColor: "#2dd4bf" }} />
+              <p className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
+                <span style={{ color: "#5eead4" }}>Custom Solutions</span>{" "}
                 that scale with your business
               </p>
             </div>
           </div>
 
-          {/* Arrow affordance */}
+          {/* URL affordance */}
           <div
             className="text-xs font-semibold flex items-center gap-1.5 transition-all group-hover:gap-2.5"
-            style={{ color: "#2dd4bf" }}
+            style={{ color: "#5eead4" }}
           >
             www.bgtecnologies.com
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
               <polyline points="15 3 21 3 21 9" />
               <line x1="10" y1="14" x2="21" y2="3" />
