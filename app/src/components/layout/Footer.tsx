@@ -144,7 +144,7 @@ export default function Footer() {
 
       {/* ── BizGen powered-by strip ── */}
       <a
-        href="https://www.bbtecnologies.com"
+        href="https://www.bgtecnologies.com"
         target="_blank"
         rel="noopener noreferrer"
         className="block relative overflow-hidden border-t group"
@@ -152,7 +152,7 @@ export default function Footer() {
           backgroundColor: "rgba(255,255,255,0.03)",
           borderColor: "rgba(255,255,255,0.08)",
         }}
-        aria-label="Powered by BizGen Technologies — Custom Solutions that scale with your business"
+        aria-label="Powered by BizGen Technologies — visit www.bgtecnologies.com"
       >
         {/* Dot-grid pattern overlay */}
         <div
@@ -206,7 +206,7 @@ export default function Footer() {
             className="text-xs font-semibold flex items-center gap-1.5 transition-all group-hover:gap-2.5"
             style={{ color: "#2dd4bf" }}
           >
-            www.bbtecnologies.com
+            www.bgtecnologies.com
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
               <polyline points="15 3 21 3 21 9" />
