@@ -25,18 +25,21 @@ interface BusinessCardProps {
    * "grid"              — vertical image-top card, used on homepage featured grid
    */
   variant?: "compact" | "grid";
+  /** Show a "Hot Offer" badge when this business has an active offer */
+  hasOffer?: boolean;
 }
 
 export default function BusinessCard({
   business,
   variant = "compact",
+  hasOffer = false,
 }: BusinessCardProps) {
-  if (variant === "grid") return <GridCard business={business} />;
+  if (variant === "grid") return <GridCard business={business} hasOffer={hasOffer} />;
   return <CompactCard business={business} />;
 }
 
 /* ─── Grid card — image top, used on homepage ─────────────────────── */
-function GridCard({ business }: { business: Business }) {
+function GridCard({ business, hasOffer = false }: { business: Business; hasOffer?: boolean }) {
   return (
     <div
       className="bg-white rounded-2xl overflow-hidden transition-all duration-200 hover:-translate-y-1 group flex flex-col"
@@ -92,6 +95,18 @@ function GridCard({ business }: { business: Business }) {
             <Badge variant="verified">✓ Verified</Badge>
           )}
         </div>
+
+        {/* Hot Offer badge — top left */}
+        {hasOffer && (
+          <div className="absolute top-2.5 left-3 z-10">
+            <span
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-black text-white tracking-wide"
+              style={{ backgroundColor: "var(--color-gold)" }}
+            >
+              🔥 Hot Offer
+            </span>
+          </div>
+        )}
 
         {/* Category pill — bottom left */}
         <span
